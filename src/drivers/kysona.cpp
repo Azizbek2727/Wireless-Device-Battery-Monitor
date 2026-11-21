@@ -32,7 +32,7 @@ bool IsVxeR1(USHORT vid, USHORT pid) {
 // mouse receivers. Their device requests (#3193, #3330, #3531) show 17-byte FF02
 // reports and an 8-byte FF04 feature collection; the BY keyboard protocol uses
 // >=20-byte FF02 reports. Keep this exception narrow to avoid waking keyboards.
-// Battery query replies are not yet confirmed on physical IO hardware.
+// Aurora Pro battery reporting confirmed by the PR author; Ergo Pro is untested.
 bool IsIoMouseFb40(const PollContext& ctx) {
     bool mouse = !ctx.Find(0x3554, 0xFB40, [](const HidColl& c) {
         return c.iface == 1 && c.page() == 0xFF02 && c.usage() == 0x0002 &&

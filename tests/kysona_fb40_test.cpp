@@ -1,5 +1,5 @@
 // Tests the production Kysona polling path with mocked HID reports.
-// No USB device is opened; the mouse protocol remains to be confirmed on hardware.
+// No USB device is opened; hardware testing of Aurora Pro was reported by the PR author.
 #include "../src/drivers/drivers.h"
 
 #include <cassert>
